@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-const helloPrefix  = "hello "
+const helloPrefix = "hello "
 
 func Hello(name string) string {
 	if name == "" {
@@ -11,6 +11,10 @@ func Hello(name string) string {
 	return helloPrefix + name
 }
 
-func main()  {
+func main() {
 	fmt.Println(Hello("hj"))
+	var a = [4]int{1, 2, 3, 4}
+	for i, v := range a {
+		fmt.Println(i, v)
+	}
 }
