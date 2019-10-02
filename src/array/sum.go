@@ -20,3 +20,23 @@ func SliceSum(arr []int) int {
 	}
 	return sum
 }
+
+func SumAll(numtosum ...[]int) (sums []int) {
+	lenofargs := len(numtosum)
+	sums = make([]int, lenofargs)
+	for i, v := range numtosum {
+		sums[i] = SliceSum(v)
+	}
+	return sums
+}
+
+func SumAllTail(arrs ...[]int) (sums []int) {
+	for _, v := range arrs {
+		if len(v) == 0 {
+			sums = append(sums, 0)
+		} else {
+			sums = append(sums, SliceSum(v[1:]))
+		}
+	}
+	return sums
+}
